@@ -1,8 +1,8 @@
 package com.hkarabakla.repositories;
 
 import com.hkarabakla.entities.Category;
+import com.hkarabakla.entities.Orders;
 import org.springframework.data.repository.CrudRepository;
 
-public interface CategoryRepo extends CrudRepository<Category, Integer> {
-
+public interface OrderRepo  extends CrudRepository<Orders, Integer> {
 }

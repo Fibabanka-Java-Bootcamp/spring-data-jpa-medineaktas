@@ -1,9 +1,12 @@
 package com.hkarabakla.entities;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Book {
+
+
 
     @Id
     private String isbn;
@@ -13,6 +16,12 @@ public class Book {
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "category_id", referencedColumnName = "id")
     private Category category;
+
+    @OneToMany(mappedBy = "book")
+    private List<OrderBook> orderBooks;
+
+    @OneToMany(mappedBy = "authors")
+    private List<AuthorBook> authorBooks;
 
     public String getIsbn() {
         return isbn;
